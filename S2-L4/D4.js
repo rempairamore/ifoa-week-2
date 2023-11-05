@@ -233,7 +233,7 @@ let shoppingCart = [
     {
         id: 3,
         name: "orecchino1",
-        price: 10,
+        price: 1000,
         quantity: 2
     },
     {
@@ -269,49 +269,135 @@ function addToShoppingCart(id) {
     }
  
 } 
-
-
 // addToShoppingCart(2)
 
 /* EXTRA 4
- Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
- Crea una funzione chiamata "maxShoppingCart" che riceve l'array "shoppingCart" e ritorna l'oggetto più costoso in esso contenuto.
+ Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". 
+ Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
+ Crea una funzione chiamata "maxShoppingCart" che riceve l'array "shoppingCart" e 
+ ritorna l'oggetto più costoso in esso contenuto.
 */
-
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+function maxShoppingCart() {
+    let maxPrice = 0;
+    let arrayNumber;
+    for(let i = 0; i < shoppingCart.length; i++) {
+        if(shoppingCart[i].price > maxPrice) {
+            maxPrice = shoppingCart[i].price
+            arrayNumber = i;
+        }
+    }
+    return  arrayNumber
+}
+
+// console.log(maxShoppingCart())
 
 /* EXTRA 5
- Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
+ Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". 
+ Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
  Crea una funzione chiamata "latestShoppingCart" che riceve l'array "shoppingCart" e ritorna l'ultimo elemento.
 */
-
 /* SCRIVI QUI LA TUA RISPOSTA */
+function latestShoppingCart() {
+    console.log(shoppingCart[shoppingCart.length - 1])
+}
+
+// latestShoppingCart()
+
 
 /* EXTRA 6
  Crea una funzione chiamata "loopUntil" che riceve un numero intero come parametro con valore tra 0 e 9.
  La funzione è composta da un ciclo che stampa un numero casuale tra 0 e 9 finchè il numero casuale non è maggiore di x per tre volte di fila.
 */
-
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+function loopUntil (x) {
+    let treVolte = 0;
+    let randNumber = 0;
+    while(treVolte != 3) {
+        if(x >= 0 && x < 10) {
+            randNumber = Math.floor(Math.random() * 10);
+            console.log(randNumber);
+        } else {
+            console.log("inserisci un valore tra 0 e 9")
+            return "inserisci un valore tra 0 e 9"
+        }
+        if(randNumber > x) {
+            treVolte++;
+        } else {
+            treVolte = 0;
+        }
+    }
+}
+
+// loopUntil(5)
+
+
+
 
 /* EXTRA 7
-Crea una funzione chiamata "average" che riceve un array come parametro e ne ritorna la media aritmetica. La funzione salta automaticamente i valori non numerici nell'array.
+Crea una funzione chiamata "average" che riceve un array come parametro e ne ritorna la media aritmetica.
+ La funzione salta automaticamente i valori non numerici nell'array.
 */
-
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+function average(arrayExtra7) {
+    let mediaAritmetica = 0;
+    let numeriTot = 0;
+    for(let i = 0; i < arrayExtra7.length; i++) {
+        if(typeof arrayExtra7[i] === 'number') {
+            mediaAritmetica += arrayExtra7[i];
+            numeriTot++;
+        }
+    }
+     console.log(mediaAritmetica / numeriTot);
+}
+
+let arrayTest = ['ciao', 9, 10, 10, true, 'ciao', 43242342432432434234234, 'ajoo come stai', "eh si eh"];
+
+// average(arrayTest);
+
+
+
+
 
 /* EXTRA 8
  Crea una funzione chiamata "longest" che trova la stringa più lunga all'interno di un array di stringhe fornito come parametro.
 */
-
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+function longest(arrayExtra8) {
+    let lungaChar = 0;
+    let lungaID = 0;
+    for(let i = 0; i < arrayExtra8.length; i++) {
+        if(arrayExtra8[i].length > lungaChar) {
+            lungaChar = arrayExtra8[i].length;
+            lungaID = i;
+        }
+    }
+    console.log("l'id piu' lungo e' il: " + lungaID + ". Il suo contenuto e' il seguente: " + arrayExtra8[lungaID])
+}
+
+// longest(arrayTest)
+
 
 /* EXTRA 9
  Crea una funzione per creare un filtro anti-spam per la tua casella email. La funzione riceve un parametro stringa chiamato "emailContent", e torna un valore booleano.
  La funzione deve ritornare true se "emailContent" non contiene le parole "SPAM" o "SCAM".
 */
-
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+function antiSpam(emailContent) {
+    let newEmail = emailContent.toLowerCase()
+    if(newEmail.search("spam") >= 0 || newEmail.search("scam") >= 0) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+// console.log(antiSpam("ciao Come staii qui c'e' dello SAM"))
 
 /* EXTRA 10
  Scrivi una funzione che riceve una data come parametro, e calcola il numero di giorni passati da quella data.
