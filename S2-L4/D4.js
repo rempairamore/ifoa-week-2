@@ -52,7 +52,7 @@ function crazyDiff(x) {
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 function boundary(n) {
-    if((n >= 20 && n <= 100) || n == 400) {
+    if((n >= 20 && n <= 100) || n === 400) {
         return true;
     }
     return false;
@@ -89,7 +89,7 @@ function epify(x) {
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 function check3and7(x) {
-    if((x % 3) == 0 || (x % 7) == 0) {
+    if((x % 3 === 0 || x % 7 === 0) && x >= 0) {
         return "il numero è multiplo";
     }
     return "il numero NON è multiplo";
@@ -125,8 +125,10 @@ function reverseString(parola) {
 // console.log(es7)
 
 /* ESERCIZIO 8
- Scrivi una funzione di nome "upperFirst", che riceve come parametro una stringa formata da diverse parole.
- La funzione deve rendere maiuscola la prima lettera di ogni parola contenuta nella stringa.
+ Scrivi una funzione di nome "upperFirst", che riceve come parametro una stringa formata 
+ da diverse parole.
+ La funzione deve rendere maiuscola la prima lettera di ogni parola contenuta 
+ nella stringa.
 */
 /* SCRIVI QUI LA TUA RISPOSTA */
 
@@ -164,7 +166,8 @@ function cutString(x) {
 
 
 /* ESERCIZIO 10
- Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.
+ Scrivi una funzione di nome "giveMeRandom", che accetta come parametro 
+ un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.
 */
 /* SCRIVI QUI LA TUA RISPOSTA */
 
